@@ -1,0 +1,12 @@
+body{margin-top:70px}
+a:link, a:visited, a:hover, a:active{text-decoration:none;}
+.calculator_container{max-width:500px;}
+#homePageButtons a{
+	display:block;
+	background-color:#e7e7e7;
+	padding:15px;
+	margin:10px;
+	border-radius:6px;
+	
+}
+

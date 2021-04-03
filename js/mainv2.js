@@ -76,9 +76,6 @@ $(document).ready(function(){
 					break;
 				case "timeForm":					
 					calculateTime();
-					break;
-				case "paceForm":
-					calculatePace();
 			}
 			
 		}else{
@@ -157,6 +154,7 @@ $(document).ready(function(){
 		var distanceInput = $("#distance").val();
 		var timeInput = parseFloat($("#time_hours").val()) + (parseFloat($("#time_minutes").val()) / 60) + (parseFloat($("#time_seconds").val()) / 3600);
 		var result;
+		var paceResult;
 		// this is the main formula
 		result = (distanceInput / timeInput).toFixed(1);
 		if(result != "Infinity" && result != "NaN"){
@@ -187,14 +185,6 @@ $(document).ready(function(){
 			resetCalculatedFields();
 		}
 		rememberCalculatorValues();
-	}
-	
-	function calculatePace(){
-		var distanceInput = $("#distance").val();
-		var timeInput = parseFloat($("#time_hours").val()) + (parseFloat($("#time_minutes").val()) / 60) + (parseFloat($("#time_seconds").val()) / 3600);
-		var rawPaceMinutes = (timeInput * 60) / distanceInput;
-		$("#pace_minutes").val(Math.floor(rawPaceMinutes));
-		$("#pace_seconds").val(lzero((rawPaceMinutes % 1 * 60).toFixed(0),2));
 	}
 	
 	function lzero(str, len) {
